@@ -1,0 +1,321 @@
+/* MENU TOGGLE & APPEARENCE */
+#menu_toggled {
+  z-index: 100;
+}
+
+.menu-open {
+  overflow-y: hidden;
+}
+
+.nav-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.nav_links {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.link {
+  display: inline-block;
+  padding-top: 10vh;
+  padding-bottom: 2%;
+  color: white;
+}
+
+
+.burger {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+  margin-right: 15px;
+}
+
+.burger_toggled {
+  position: absolute;
+  right: 0;
+  z-index: 100;
+}
+
+.burger_toggled .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.burger_toggled .bar2 {
+  opacity: 0;
+}
+
+.burger_toggled .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.tag-popout {
+  display: none;
+}
+
+.tag-popout_toggled {
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  height: 300px;
+  position: fixed;
+  top: 0;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  text-align: left;
+  background: rgb(128, 225, 195);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  height: 100vh;
+  animation-name: appear;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+/*LINK ANIMATION*/
+
+a:hover > span {
+  color: #f5f262;
+  animation: shake 1s ease infinite;
+
+}
+
+.link {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  margin-top: 50px;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.link:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.link:hover:after { 
+  width: 60%; 
+}
+
+
+/* ALL DROPDOWN */
+
+.menu-dropbtn {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  background-color: rgb(128, 225, 195);
+  color: white;
+  border: none;
+  text-align: left;
+}
+
+
+.menu-dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+.menu-dropdown-content {
+  display: none;
+  position: absolute;
+
+  background-color: #f1f1f1;
+  min-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.menu-2);
+  z-index: 100;
+}
+
+
+.menu-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  
+}
+
+
+.menu-dropdown-content a:hover {
+  background-color: rgb(128, 225, 195);
+  color: white;
+
+}
+
+
+.menu-dropdown:hover .menu-dropbtn {background-color: rgb(106, 184, 156);}
+
+
+#dropdown-arrow {
+  font-size: .6em;
+  padding: 2%;
+}
+
+.email-link {
+  text-align: left;
+}
+
+.menu-dropdown:hover .menu-dropdown-content {
+  display: block; 
+  opacity: 1;
+  animation: opacity 700ms ease-in-out normal;
+ 
+}
+
+@keyframes opacity { 
+   from { opacity:0; } 
+   to { opacity: 1; } 
+}
+
+
+
+@media (max-width: 600px) {
+  /* .tag-popout_toggled {
+    width: 60vw;
+  } */
+
+  .tag-popout_toggled {
+    width: 80vw;
+  }
+
+  .link, .menu-dropbtn {
+    font-size: 4vw;
+  }
+
+  #contact-menu  li {
+    float: left;
+    font-size: 1.2em !important;
+  }
+  
+  #contact-dropdown {
+    background: none;
+    font-size: 1.2em !important;
+  
+  }
+  
+  #contact-dropdown a {
+    color: #f5f262;
+  
+  }
+  
+  .MuiSvgIcon-root {
+    font-size: 1.2em !important;
+  }
+
+
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+
+
+  .link, .menu-dropbtn {
+    font-size: 4vw;
+  }
+  #contact-menu  li {
+    float: left;
+    font-size: 1.5em !important;
+  }
+  
+  #contact-dropdown {
+    background: none;
+    font-size: 1.5em !important;
+  
+  }
+  
+  #contact-dropdown a {
+    color: #f5f262;
+  
+  }
+  
+  .MuiSvgIcon-root {
+    font-size: 1.5em !important;
+  }
+
+}
+
+@media(min-width: 600px) and (max-width: 800px) {
+  .link {
+    font-size: 1.7vw;
+    width: 300px;
+  }
+
+  .tag-popout_toggled {
+    width: 45vw;
+  }
+}
+
+@media (min-width: 800px) {
+
+  .link {
+    font-size: 1vw;
+    width: 300px;
+  }
+
+  .menu-dropbtn {
+    font-size: 1vw;
+  }
+
+  #contact-menu  li {
+    float: left;
+    font-size: 1em !important;
+    text-align: center;
+    margin-left: 2%;
+  }
+  
+  #contact-dropdown {
+    background: none;
+    font-size: 1em !important;
+  
+  }
+  
+  #contact-dropdown a {
+    color: #f5f262;
+    text-align: center;
+  
+  }
+
+  #contact-dropdown a:hover {
+    color: white;
+  }
+  
+  .MuiSvgIcon-root {
+    font-size: 1.5em !important;
+  }
+
+}
